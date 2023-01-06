@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -10,6 +10,9 @@ const pageTab = [
 ];
 
 const Header: React.FC = () => {
+
+    const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
+
     return (
         <>
             <div className={styles.pcView}>
@@ -20,7 +23,7 @@ const Header: React.FC = () => {
                     <div className={styles.space} />
                     <div className={styles.right}>
                         <button>
-                            Some location
+                            Location
                         </button>
                         <span className={styles.pageListItem}>
                             edmc@edmc.hk
@@ -28,18 +31,23 @@ const Header: React.FC = () => {
                         <span className={styles.pageListItem}>
                             +852 3620 3086
                         </span>
-                        <button className={styles.pageListItem}>
-                            Some Button
+                        <button 
+                            className={styles.pageListItem}
+                            onClick={() => setIsOpenDrawer(!isOpenDrawer)}
+                        >
+                            {isOpenDrawer ? 'close' : 'open'}
                         </button>
                     </div>
                 </div>
+            </div>
 
-                <div className={styles.drawer}>
-                    {/* {pageTab.map((tab) => (
+            <div className={isOpenDrawer ? styles.drawer : styles.drawerClosed}>
+                <div className={styles.linkContainer}>
+                    {pageTab.map((tab) => (
                         <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem}>
                             {tab.name}
                         </Link>
-                    ))} */}
+                    ))}
                 </div>
             </div>
 

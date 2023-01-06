@@ -14,7 +14,8 @@
 }
 
 .icon {
-    z-index: 100;
+    display: block;
+    position: absolute;
 }
 
 .pageListItem {
@@ -27,7 +28,7 @@
     @include global.pcView;
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
 .tabletView {
@@ -39,10 +40,33 @@
 }
 
 .right {
-    border: 1px solid;
     background-color: darkblue;
     height: 36px;
     padding: 15px;
+}
+
+.drawerClosed {
+    display: none;
+}
+
+.drawer {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 96vh;
+    margin: 1vh auto;
+    background: orange;
+    z-index: 4;
+
+    .linkContainer {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: global.$tablet) {
