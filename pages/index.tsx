@@ -1,11 +1,30 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import styles from './index.module.scss'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const galleryContent = [
+  {
+    name: 'First Picture',
+    description: 'First Page Description',
+    img: '/aesop.jpeg',
+    imgAlt: 'Aesop'
+  },
+  {
+    name: 'Second Picture',
+    description: 'Second Page Description',
+    img: '/aesop.jpeg',
+    imgAlt: 'Aesop 2'
+  },
+];
+
 export default function Home() {
+
+  const [galleryIndex, setGalleryIndex] = useState<number>(0);
+
   return (
     <>
       <Head>
@@ -14,12 +33,26 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{ height: '400px', backgroundColor: 'black' }}>Hello</div>
-      <div style={{ height: '400px', backgroundColor: 'black' }}>Hello</div>
-      <div style={{ height: '400px' }}>Hello</div>
-      <div style={{ height: '400px' }}>Hello</div>
-      <div style={{ height: '400px' }}>Hello</div>
-      <div style={{ height: '400px' }}>Hello</div>
+      <div className={styles.galleryImageContainer}>
+        <Image
+          className={styles.galleryImage}
+          src={galleryContent[galleryIndex]['img']}
+          alt={galleryContent[galleryIndex]['imgAlt']}
+          fill
+        />
+      </div>
+      <div className={styles.galleryCardContainer}>
+        <h1 className={styles.galleryCardTitle}>{galleryContent[galleryIndex]['name']}</h1>
+        <div className={styles.galleryDescriptionContainer}>
+          <div>
+            View
+          </div>
+        </div>
+        <div className={styles.galleryScrollContainer}>
+
+        </div>
+      </div>
+
     </>
   )
 }

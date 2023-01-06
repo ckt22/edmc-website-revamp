@@ -15,12 +15,7 @@ const Header: React.FC = () => {
             <div className={styles.pcView}>
                 <div className={styles.header}>
                     <div>
-                        <Image src="/next.svg" alt="AAXPay" width={120} height={120} />
-                        {/* {pageTab.map((tab) => (
-                            <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem}>
-                                {tab.name}
-                            </Link>
-                        ))} */}
+                        <Image className={styles.icon} src="/next.svg" alt="AAXPay" width={120} height={120} />
                     </div>
                     <div className={styles.space} />
                     <div className={styles.right}>
@@ -37,6 +32,14 @@ const Header: React.FC = () => {
                             Some Button
                         </button>
                     </div>
+                </div>
+
+                <div className={styles.drawer}>
+                    {/* {pageTab.map((tab) => (
+                        <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem}>
+                            {tab.name}
+                        </Link>
+                    ))} */}
                 </div>
             </div>
 
