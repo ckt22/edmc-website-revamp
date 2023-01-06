@@ -1,6 +1,11 @@
 @use 'styles/global.scss';
 
-.backgroundImage {
+.layout {
+    margin: -8px;
+    background: url('/aesop.jpeg') no-repeat center center fixed;
     object-fit: cover;
-    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

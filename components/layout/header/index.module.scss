@@ -23,7 +23,9 @@
     @include global.pcView;
     position: sticky;
     top: 0;
+    z-index: 3;
 }
+
 .tabletView {
     @include global.tabletView;
 }

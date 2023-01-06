@@ -14,8 +14,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div style={{ height: '400px' }}>Hello</div>
-      <div style={{ height: '400px' }}>Hello</div>
+      <div style={{ height: '400px', backgroundColor: 'black' }}>Hello</div>
+      <div style={{ height: '400px', backgroundColor: 'black' }}>Hello</div>
       <div style={{ height: '400px' }}>Hello</div>
       <div style={{ height: '400px' }}>Hello</div>
       <div style={{ height: '400px' }}>Hello</div>

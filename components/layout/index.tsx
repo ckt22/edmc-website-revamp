@@ -14,12 +14,6 @@ const Layout: React.FC<PropsType> = (props: PropsType) => {
     return (
         <div className={styles.layout}>
             <Header />
-            <Image
-                className={styles.backgroundImage}
-                src='/aesop.jpeg' 
-                alt={'aesop'}
-                fill
-            />
             {children}
             <Footer />
         </div>
