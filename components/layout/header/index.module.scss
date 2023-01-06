@@ -8,8 +8,6 @@
     width: 90%;
     margin: 0 auto;
     padding: 21px 0;
-    position: sticky;
-    top: 0;
     .space {
         flex: 1;
     }
@@ -23,6 +21,8 @@
 
 .pcView {
     @include global.pcView;
+    position: sticky;
+    top: 0;
 }
 .tabletView {
     @include global.tabletView;
