@@ -13,19 +13,57 @@
 .galleryImage {
     object-fit: cover;
     z-index: -1;
+    transition: opacity 0.5s linear;
+    animation-name: imageFadeAnimation;
+    animation-duration: 4s;
+}
+
+@keyframes imageFadeAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .galleryCardTitle {
     font-size: 25px;
-    margin-top: -20px;
+    margin-bottom: -0.6rem;
 }
 
 .galleryCardContainer {
-    background-color: red;
     position: absolute;
-    height: 8rem;
-    width: 35rem;
     bottom: 4rem;
     left: 5rem;
     z-index: 2;
+}
+
+.galleryCardDescriptionContainer {
+    background-color: red;
+    height: 5rem;
+    width: 35rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    .space {
+        flex: 1;
+    }
+
+    .galleryDescriptionViewButton {
+        margin-left: -25px;
+        position: absolute;
+        right: -1.5rem;
+        bottom: 2.35rem;
+        height: 1.8rem;
+        width: 4.5rem;
+
+        border: none;
+
+        cursor: pointer;
+    }
+}
+
+.galleryScrollContainer {
+    display: flex;
+
+    .space {
+        flex: 1;
+    }
 }
