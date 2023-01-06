@@ -15,15 +15,28 @@ const Header: React.FC = () => {
             <div className={styles.pcView}>
                 <div className={styles.header}>
                     <div>
-                        <Image src="/icon/logo.png" alt="AAXPay" width={100} height={28} />
-                        {pageTab.map((tab) => (
+                        <Image src="/next.svg" alt="AAXPay" width={120} height={120} />
+                        {/* {pageTab.map((tab) => (
                             <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem}>
                                 {tab.name}
                             </Link>
-                        ))}
+                        ))} */}
                     </div>
                     <div className={styles.space} />
-                    <p>Hello</p>
+                    <div className={styles.right}>
+                        <button>
+                            Some location
+                        </button>
+                        <span className={styles.pageListItem}>
+                            edmc@edmc.hk
+                        </span>
+                        <span className={styles.pageListItem}>
+                            +852 3620 3086
+                        </span>
+                        <button className={styles.pageListItem}>
+                            Some Button
+                        </button>
+                    </div>
                 </div>
             </div>
 
