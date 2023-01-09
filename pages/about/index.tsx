@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from './index.module.scss';
 import Image from 'next/image';
+import Map from '@components/map';
 
 export default function About() {
 
@@ -72,6 +73,7 @@ export default function About() {
             <div id='location' className={styles.locationContainer}>
                 <h1>We locate here</h1>
                 <div className={styles.locationMapContainer}>
+                    <Map longitude={114.1882847} latitude={22.3151962} />
                 </div>
             </div>
         </div>

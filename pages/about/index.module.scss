@@ -7,7 +7,6 @@
 .heroSectionContainer {
     height: 100vh;
     width: 100%;
-    display: block;
 
     .heroTitle {
         position: absolute;
@@ -44,7 +43,6 @@
 
 .confidentContainer {
     position: relative;
-    display: block;
     height: 55vh;
 
     .confidentHeader {
@@ -83,7 +81,8 @@
 
 .pragmaticContainer {
 
-    height: 30vh;
+    height: 70vh;
+    margin-bottom: 10vh;
 
     .pragmaticHeader {
         position: absolute;
@@ -97,12 +96,15 @@
 }
 
 .locationContainer {
-    height: 75vh;
+    height: 100vh;
     text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 
     .locationMapContainer {
-        width: 50vh;
-        height: 50vh;
+        width: 100%;
+        height: 75vh;
     }
 }
 
