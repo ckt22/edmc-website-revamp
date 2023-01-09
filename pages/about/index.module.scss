@@ -1,0 +1,134 @@
+@use 'styles/global.scss';
+
+.aboutPageMainContainer {
+    background-color: lightgray;
+}
+
+.heroSectionContainer {
+    height: 100vh;
+    width: 100%;
+    display: block;
+
+    .heroTitle {
+        position: absolute;
+        text-align: center;
+        font-size: 40px;
+        left: 5%;
+        bottom: 5em;
+        color: white;
+    }
+
+    .heroImage {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+    }
+
+    .heroDescriptonContainer {
+        position: absolute;
+        background-color: blue;
+        right: 8%;
+        bottom: 15%;
+        padding: 0 1rem;
+        width: 40%;
+        height: 15%;
+
+        .heroDescriptionText {
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            margin-top: -2%;
+        }
+    }
+}
+
+.confidentContainer {
+    position: relative;
+    display: block;
+    height: 55vh;
+
+    .confidentHeader {
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        z-index: 3;
+    }
+
+    .confidentDiv {
+        background-color: white;
+        position: absolute;
+        top: 25%;
+        left: 0;
+
+        width: 65%;
+        height: 75%;
+    }
+
+    .confidentImage {
+        position: absolute;
+        top: 8%;
+        right: 0;
+        object-fit: cover;
+        height: 380px;
+        width: auto;
+        z-index: 2;
+    }
+}
+
+.realWorkContainer {
+    height: 75vh;
+    text-align: center;
+    align-items: center;
+}
+
+.pragmaticContainer {
+
+    height: 30vh;
+
+    .pragmaticHeader {
+        position: absolute;
+    }
+    .pragamticDiv {
+        position: absolute;
+    }
+    .pragmaticImage {
+        position: absolute;
+    }
+}
+
+.locationContainer {
+    height: 75vh;
+    text-align: center;
+
+    .locationMapContainer {
+        width: 50vh;
+        height: 50vh;
+    }
+}
+
+@media (max-width: global.$mobile) {
+
+    .heroSectionContainer {
+        .heroTitle {
+            font-size: 28px;
+            left: 2%;
+            bottom: 22%;
+        }
+    
+        .heroDescriptonContainer {
+            bottom: 8%;
+            right: 0;
+            width: 60%;
+        }
+    }
+
+    .confidentContainer {
+        height: 100vh;
+
+        .confidentDiv {
+            z-index: 4;
+            top: 50%;
+            width: 60%;
+        }
+    }
+}

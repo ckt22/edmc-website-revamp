@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './index.module.scss'
-import { useState } from 'react'
+import Head from 'next/head';
+import Image from 'next/image';
+import { Inter } from '@next/font/google';
+import styles from './index.module.scss';
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +27,7 @@ export default function Home() {
 
   const getNewGalleryIndex = (isNext: boolean) => {
     if (isNext) {
-      if (galleryIndex + 1 > galleryContent.length) {
+      if (galleryIndex + 1 >= galleryContent.length) {
         setGalleryIndex(0)
       } else {
         setGalleryIndex(galleryIndex + 1);

@@ -16,6 +16,7 @@
 .icon {
     display: block;
     position: absolute;
+    cursor: pointer;
 }
 
 .pageListItem {
@@ -29,6 +30,7 @@
     position: sticky;
     top: 0;
     z-index: 5;
+    background-color: transparent;
 }
 
 .tabletView {
@@ -62,7 +64,7 @@
     z-index: 4;
 
     .linkContainer {
-        margin-top: 5rem;
+        margin-top: 8rem;
         display: flex;
         flex-direction: column;
         text-align: center;

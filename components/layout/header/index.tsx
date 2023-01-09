@@ -2,22 +2,24 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
+import { useRouter } from 'next/router';
 
 const pageTab = [
-    { name: 'About Us', path: '/about_us' },
-    { name: 'Projects', path: '/product' },
-    { name: 'Case Studies', path: '/product' }
+    { name: 'About Us', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Case Studies', path: '/case-studies' }
 ];
 
 const Header: React.FC = () => {
 
+    const router = useRouter();
     const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
 
     return (
         <>
             <div className={styles.pcView}>
                 <div className={styles.header}>
-                    <div>
+                    <div onClick={() => router.push('/')}>
                         <Image className={styles.icon} src="/next.svg" alt="AAXPay" width={120} height={120} />
                     </div>
                     <div className={styles.space} />
@@ -44,7 +46,7 @@ const Header: React.FC = () => {
             <div className={isOpenDrawer ? styles.drawer : styles.drawerClosed}>
                 <div className={styles.linkContainer}>
                     {pageTab.map((tab) => (
-                        <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem}>
+                        <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem} onClick={() => setIsOpenDrawer(false)}>
                             {tab.name}
                         </Link>
                     ))}
