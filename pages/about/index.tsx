@@ -73,7 +73,7 @@ export default function About() {
             <div id='location' className={styles.locationContainer}>
                 <h1>We locate here</h1>
                 <div className={styles.locationMapContainer}>
-                    <Map longitude={114.1882847} latitude={22.3151962} />
+                    <Map longitude={114.1904734} latitude={22.3151962} />
                 </div>
             </div>
         </div>

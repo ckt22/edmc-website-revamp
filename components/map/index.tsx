@@ -18,6 +18,8 @@ const Map = ({ children, latitude, longitude, zoom }: { children?: ReactNode, la
       title: 'Meow!'
     });
   
+    // Similar to componentDidMount and componentDidUpdate:
+    // By default, it runs both after the first render and after every update.
     useEffect(() => {
       if (ref.current && !map) {
         setMap(
@@ -34,7 +36,7 @@ const Map = ({ children, latitude, longitude, zoom }: { children?: ReactNode, la
           })
         );
       }
-    }, [ref, map, latitude, longitude]);
+    }, [ref, map, latitude, longitude, zoom]);
   
     return <div ref={ref} style={{height: '100%', width: '100%'}} />;
     // return (
