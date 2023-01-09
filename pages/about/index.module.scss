@@ -42,8 +42,9 @@
 }
 
 .confidentContainer {
-    position: relative;
+    position: relative; // required so it does not overlap with hero section
     height: 55vh;
+    margin-bottom: 15vh;
 
     .confidentHeader {
         position: absolute;
@@ -81,17 +82,38 @@
 
 .pragmaticContainer {
 
-    height: 70vh;
-    margin-bottom: 10vh;
+    position: relative;
+    height: 55vh;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 
     .pragmaticHeader {
         position: absolute;
+        z-index: 4;
+
+        top: -20%;
+        left: 35%;
+
+        font-size: 55px;
     }
-    .pragamticDiv {
+    .pragmaticDiv {
         position: absolute;
+        background-color: white;
+        top: 20%;
+        right: 0;
+
+        width: 65%;
+        height: 75%;
+
+        z-index: 2;
     }
     .pragmaticImage {
         position: absolute;
+        left: 0;
+        z-index: 3;
+
+        width: 650px;
+        height: auto;
     }
 }
 
