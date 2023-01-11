@@ -1,0 +1,78 @@
+@use 'styles/global.scss';
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 220px;
+
+    position: relative;
+}
+
+.optionButton {
+    font-family: 'Oswald';
+    font-size: 18px;
+    border: 0;
+    background: global.$primary-color;
+    width: 100%;
+    min-height: 7vh;
+    padding: 6px 8px;
+    position: relative;
+    text-align: left;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .space {
+        flex: 1;
+    }
+}
+
+.optionButton:hover {
+    cursor: pointer;
+}
+
+.optionButton::after {
+    position: absolute;
+    right: 6px;
+    top: 4px;
+}
+
+.optionsList {
+    border: none;
+    display: none;
+    list-style: none;
+    padding: 4px 0;
+    margin-top: -4px;
+
+    overflow: hidden;
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+}
+
+.optionsList.show {
+    display: block;
+}
+
+.optionsList li {
+    color: white;
+    font-size: 18px;
+    background-color: global.$primary-color;
+    border: 0;
+    padding: 6px 10px;
+
+    position: relative;
+}
+
+.optionsList li:active,
+.options li:focus,
+.options li:hover,
+.options li[aria-selected="true"] {
+    background: pink;
+    cursor: pointer;
+}

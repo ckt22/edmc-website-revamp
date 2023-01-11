@@ -1,0 +1,33 @@
+@use 'styles/global.scss';
+
+.projectPageContainer {
+    font-family: 'Oswald';
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    position: absolute;
+
+    // hack - to apply background throughout the page
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    background-color: lightgray;
+
+    z-index: -1;
+}
+
+.dropdownContainer {
+    display: block;
+    position: relative;
+    margin: 20vh 5% 0 5%;
+    display: flex;
+
+    .space {
+        flex: 1;
+    }
+}
+
+.galleryContainer {
+    position: relative;
+}

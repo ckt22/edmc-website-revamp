@@ -1,24 +1,31 @@
 import { useState } from 'react';
+import DropDown from '@components/dropdown';
+import Image from 'next/image';
+import styles from './index.module.scss';
 
-const selectOptions = [
+const propertySelectOptions = [
     {
-        name: 'OMG',
-        value: 'omg'
+        name: 'Cultural Space Institutional',
+        value: 'cultural'
+    },
+    {
+        name: 'Residentail',
+        value: 'residential'
     }
 ];
 
 function Projects() {
 
     const [galleryImageIndex, setGalleryImageIndex] = useState<number>(0);
+    const [property, setProperty] = useState<string>('');
 
     return (
-        <>
-            <div>
-                <select value={''}>
-                    {selectOptions.map((op, idx) => (<option key={idx} value={op.value}>{op.name}</option>))}
-                </select>
+        <div className={styles.projectPageContainer}>
+            <div className={styles.dropdownContainer}>
+                <div className={styles.space} />
+                <DropDown name={'Property'} optionsList={propertySelectOptions} />
             </div>
-        </>
+        </div>
     );
 }
 
