@@ -62,20 +62,22 @@ export default function About() {
                 </div>
             </div>
             <div className={styles.pragmaticContainer}>
-                <h1 className={styles.pragmaticHeader}>Pragmatic</h1>
+                <h1 className={styles.pragmaticHeader}>PRAGMATIC</h1>
                 <div className={styles.pragmaticDiv}>
-                    Pragmatic Div
+                    COMPREHENSIVE interior fitting out contracting services and projects including carpentry, metal works, plumbing and drainage, electrical works, air-conditioning works, cement works, painting, aluminum works, glass partition, signage and graphic production.
                 </div>
-                <Image
-                    className={styles.pragmaticImage}
-                    src='/aesop.jpeg'
-                    alt='aesop'
-                    width={650}
-                    height={500}
-                />
+                <div className={styles.pragmaticImageContainer}>
+                    <Image
+                        className={styles.pragmaticImage}
+                        src='/pragmatic.png'
+                        alt='pragmatic'
+                        fill
+                    />
+                </div>
+
             </div>
             <div id='location' className={styles.locationContainer}>
-                <h1>We locate here</h1>
+                <h1 className={styles.locationHeader}>We locate here</h1>
                 <div className={styles.locationMapContainer}>
                     <Map longitude={114.1904734} latitude={22.3151962} />
                 </div>

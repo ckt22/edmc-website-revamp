@@ -49,14 +49,19 @@ $paragraph-text-color: #4F6584;
 
 .confidentContainer {
     position: relative; // required so it does not overlap with hero section
+    margin-top: 5vh;
     height: 55vh;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 
     .confidentHeader {
         position: absolute;
-        top: -5%;
-        left: 50%;
+        top: -12%;
+        left: 55%;
         z-index: 3;
+
+        font-size: 50px;
+        font-weight: 400;
+
     }
 
     .confidentDiv {
@@ -96,8 +101,8 @@ $paragraph-text-color: #4F6584;
 .realWorkContainer {
     
     position: relative;
-    height: 80vh;
-    margin-bottom: 20vh;
+    height: 85vh;
+    margin-bottom: 5vh;
     text-align: center;
     align-items: center;
     display: flex;
@@ -108,12 +113,13 @@ $paragraph-text-color: #4F6584;
     }
 
     .realWorkImageContainer {
-        position: static;
-        width: 75%;
-        height: auto;
+        width: 70%;
 
         .realWorkImage {
             object-fit: cover;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
         }
     }
 }
@@ -123,45 +129,64 @@ $paragraph-text-color: #4F6584;
     position: relative;
     height: 55vh;
     margin-top: 15vh;
-    margin-bottom: 15vh;
+    margin-bottom: -15vh;
 
     .pragmaticHeader {
         position: absolute;
         z-index: 4;
 
         top: -20%;
-        left: 35%;
+        left: 30%;
 
-        font-size: 55px;
+        font-size: 50px;
+        font-weight: 400;
     }
+
     .pragmaticDiv {
         position: absolute;
         background-color: white;
         top: 20%;
         right: 0;
+        padding: 7% 15%;
 
-        width: 65%;
-        height: 75%;
+        font-weight: 300;
+        font-size: 20px;
+        color: $paragraph-text-color;
+        text-align: start;
+
+        width: 30%;
+        height: 40%;
 
         z-index: 2;
     }
-    .pragmaticImage {
+
+    .pragmaticImageContainer {
         position: absolute;
         left: 0;
         z-index: 3;
 
-        width: 650px;
-        height: auto;
+        width: 50%;
+    }
+
+    .pragmaticImage {
+        object-fit: cover;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
     }
 }
 
 .locationContainer {
     height: 90vh;
-    margin-top: 8vh;
+    margin-top: 30vh;
     text-align: center;
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    .locationHeader {
+        font-weight: 200;
+    }
 
     .locationMapContainer {
         width: 100%;
@@ -173,25 +198,77 @@ $paragraph-text-color: #4F6584;
 
     .heroSectionContainer {
         .heroTitle {
-            font-size: 28px;
+            font-size: 24px;
             left: 2%;
             bottom: 22%;
         }
     
         .heroDescriptonContainer {
-            bottom: 8%;
+            bottom: 13%;
             right: 0;
             width: 60%;
+            height: 10%;
+            font-size: 11px;
+
+            .heroDescriptionText {
+                margin-top: -4%;
+            }
         }
     }
 
     .confidentContainer {
-        height: 100vh;
+        height: 30vh;
+        margin-bottom: 0;
+
+        .confidentHeader {
+            font-size: 25px;
+            top: -10%;
+        }
 
         .confidentDiv {
-            z-index: 4;
             top: 50%;
-            width: 60%;
+            width: 45%;
+            height: 45%;
+
+            top: 10%;
+            font-size: 10px;
+            padding: 3% 10% 0 3%;
         }
+
+        .confidentImageContainer {
+            width: 50%;
+        }
+    }
+
+    .realWorkContainer {
+        height: 30vh;
+
+        .realWorkHeader {
+            font-size: 25px;
+        }
+    }
+
+    .pragmaticContainer {
+        height: 30vh;
+
+        .pragmaticHeader {
+            font-size: 25px;
+            left: 18%;
+            top: -18%;
+        }
+
+        .pragmaticDiv {
+            top: 50%;
+            width: 45%;
+            height: 50%;
+
+            top: 10%;
+            font-size: 10px;
+            padding: 3% 0 0 10%;
+        }
+    }
+
+    .locationContainer {
+        margin-top: 10vh;
     }
 }
