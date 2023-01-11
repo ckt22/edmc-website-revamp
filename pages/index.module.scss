@@ -30,8 +30,8 @@
 
 .galleryCardTitle {
     position: absolute;
-    bottom: 9.5rem;
-    left: 2rem;
+    bottom: 85%;
+    left: 5%;
     font-size: 60px;
     font-weight: 200;
     color: white;
@@ -40,8 +40,8 @@
 
 .galleryCardContainer {
     position: absolute;
-    bottom: 4rem;
-    left: 5rem;
+    bottom: 10%;
+    left: 8%;
     z-index: 2;
 }
 
@@ -49,9 +49,9 @@
     background-color: global.$primary-color;
     color: white;
     font-weight: 300;
-    height: 5rem;
-    width: 35rem;
-    padding: 1.5rem 3.5rem 2rem 2rem;
+    height: 35%;
+    width: 60%;
+    padding: 2% 8% 5% 5%;
     margin-bottom: 1rem;
 
     .space {
@@ -67,10 +67,10 @@
     .galleryDescriptionViewButton {
         margin-left: -25px;
         position: absolute;
-        right: -1.5rem;
-        bottom: 2.35rem;
-        height: 2.5rem;
-        width: 6rem;
+        right: 25%;
+        bottom: 25%;
+        height: 25%;
+        width: 12%;
         background-color: white;
         color: global.$primary-color;
 
@@ -85,6 +85,7 @@
 }
 
 .galleryScrollContainer {
+    width: 70%;
     display: flex;
 
     .space {
@@ -106,5 +107,39 @@
         .arrowRight {
             margin-left: 15px;
         }
+    }
+}
+
+@media (max-width: global.$mobile) { 
+
+    .galleryCardTitle {
+        font-size: 35px;
+        bottom: 95%;
+    }
+
+    .galleryCardContainer {
+        height: 20%;
+    }
+
+    .galleryCardDescriptionContainer {
+        width: 75%;
+        height: 45%;
+
+        padding: 5% 8% 5% 5%;
+
+        .galleryCardDescriptionText {
+            font-size: 10px;
+            line-height: 1.2rem;
+        }
+
+        .galleryDescriptionViewButton {
+            width: 25%;
+            right: 5%;
+            bottom: 35%;
+        }
+    }
+
+    .galleryScrollContainer {
+        width: 90%;
     }
 }
