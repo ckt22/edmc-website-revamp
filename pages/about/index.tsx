@@ -31,31 +31,35 @@ export default function About() {
                 <h1 className={styles.heroTitle}>PROFESSIONAL HIGH-END</h1>
                 <div className={styles.heroDescriptonContainer}>
                     <div className={styles.heroDescriptionText}>
-                        Some text Some text Some text Some text Some text Some text Some text Some text Some text
+                    EDMC offers project management, consulting and contracting services in a wide range of interior fitting out projects, including office premises, retail outlets, residences, hotels and art galleries.
                     </div>
                 </div>
             </div>
             <div className={styles.confidentContainer}>
                 <h1 className={styles.confidentHeader}>CONFIDENT</h1>
-                <div className={styles.confidentDiv}> confident Div</div>
-                <Image
-                    className={styles.confidentImage}
-                    src='/aesop.jpeg'
-                    alt='aesop'
-                    width={650}
-                    height={500}
-                />
-                <div className={styles.confidentDiv}> confident Div</div>
+                <div className={styles.confidentImageContainer}>
+                    <Image
+                        className={styles.confidentImage}
+                        src='/confident.png'
+                        alt='confident'
+                        fill
+                    />
+                </div>
+
+                <div className={styles.confidentDiv}>
+                    Fitting out contracting services and projects including carpentry, metal works, plumbing and drainage, electrical works, air-conditioning works, cement works, painting, aluminum works, glass partition, signage and graphic production.
+                </div>
             </div>
             <div className={styles.realWorkContainer}>
-                <h1>We do real work, not just to put up empty promises</h1>
-                <Image
-                    className={styles.confidentImage}
-                    src='/aesop.jpeg'
-                    alt='aesop'
-                    width={650}
-                    height={500}
-                />
+                <h1 className={styles.realWorkHeader}>We do real work, not just to put up empty promises</h1>
+                <div className={styles.realWorkImageContainer}>
+                    <Image
+                        className={styles.realWorkImage}
+                        src='/realWork.png'
+                        alt='real work'
+                        fill
+                    />
+                </div>
             </div>
             <div className={styles.pragmaticContainer}>
                 <h1 className={styles.pragmaticHeader}>Pragmatic</h1>

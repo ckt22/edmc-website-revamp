@@ -1,5 +1,7 @@
 @use 'styles/global.scss';
 
+$paragraph-text-color: #4F6584;
+
 .aboutPageMainContainer {
     background-color: lightgray;
 }
@@ -11,9 +13,10 @@
     .heroTitle {
         position: absolute;
         text-align: center;
-        font-size: 40px;
-        left: 5%;
-        bottom: 5em;
+        font-size: 60px;
+        font-weight: 200;
+        left: 15%;
+        bottom: 25%;
         color: white;
     }
 
@@ -25,12 +28,15 @@
 
     .heroDescriptonContainer {
         position: absolute;
-        background-color: blue;
-        right: 8%;
+        background-color: global.$primary-color;
+        font-weight: 300;
+        right: 15%;
         bottom: 15%;
         padding: 0 1rem;
-        width: 40%;
+        width: 30%;
         height: 15%;
+        color: white;
+        letter-spacing: 0.5px;
 
         .heroDescriptionText {
             justify-content: flex-start;
@@ -56,28 +62,60 @@
     .confidentDiv {
         background-color: white;
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 0;
+        padding: 7% 15%;
 
-        width: 65%;
-        height: 75%;
+        font-weight: 300;
+        font-size: 20px;
+        color: $paragraph-text-color;
+        text-align: end;
+
+        width: 30%;
+        height: 40%;
     }
 
-    .confidentImage {
+    .confidentImageContainer {
         position: absolute;
         top: 8%;
         right: 0;
         object-fit: cover;
-        height: 380px;
-        width: auto;
+        width: 50%;
+
         z-index: 2;
+
+        .confidentImage {
+            object-fit: cover;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
+        }
     }
 }
 
 .realWorkContainer {
-    height: 75vh;
+    
+    position: relative;
+    height: 80vh;
+    margin-bottom: 20vh;
     text-align: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .realWorkHeader {
+        font-weight: 200;
+    }
+
+    .realWorkImageContainer {
+        position: static;
+        width: 75%;
+        height: auto;
+
+        .realWorkImage {
+            object-fit: cover;
+        }
+    }
 }
 
 .pragmaticContainer {
