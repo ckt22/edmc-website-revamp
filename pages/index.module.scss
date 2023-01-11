@@ -1,5 +1,10 @@
 @use 'styles/global.scss';
 
+
+.homeContainer {
+    font-family: 'Oswald';
+}
+
 .galleryImageContainer {
     position: absolute;
     top: 0;
@@ -24,7 +29,12 @@
 }
 
 .galleryCardTitle {
-    font-size: 25px;
+    position: absolute;
+    bottom: 9.5rem;
+    left: 2rem;
+    font-size: 60px;
+    font-weight: 200;
+    color: white;
     margin-bottom: -0.6rem;
 }
 
@@ -36,14 +46,22 @@
 }
 
 .galleryCardDescriptionContainer {
-    background-color: red;
+    background-color: global.$primary-color;
+    color: white;
+    font-weight: 300;
     height: 5rem;
     width: 35rem;
-    padding: 0.5rem;
+    padding: 1.5rem 3.5rem 2rem 2rem;
     margin-bottom: 1rem;
 
     .space {
         flex: 1;
+    }
+
+    .galleryCardDescriptionText {
+        margin-top: 0;
+        letter-spacing: 0.5px;
+        line-height: 2rem;
     }
 
     .galleryDescriptionViewButton {
@@ -51,8 +69,14 @@
         position: absolute;
         right: -1.5rem;
         bottom: 2.35rem;
-        height: 1.8rem;
-        width: 4.5rem;
+        height: 2.5rem;
+        width: 6rem;
+        background-color: white;
+        color: global.$primary-color;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         border: none;
 
@@ -65,5 +89,22 @@
 
     .space {
         flex: 1;
+    }
+
+    .galleryScrollButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        color: lightgray;
+        cursor: pointer;
+
+        .arrowLeft {
+            margin-right: 15px;
+        }
+
+        .arrowRight {
+            margin-left: 15px;
+        }
     }
 }
