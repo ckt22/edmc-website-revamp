@@ -4,14 +4,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 220px;
+    width: 250px;
 
     position: relative;
 }
 
 .optionButton {
     font-family: 'Oswald';
-    font-size: 18px;
+    font-size: 16px;
     border: 0;
     background: global.$primary-color;
     width: 100%;
@@ -61,7 +61,7 @@
 
 .optionsList li {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     background-color: global.$primary-color;
     border: 0;
     padding: 6px 10px;
