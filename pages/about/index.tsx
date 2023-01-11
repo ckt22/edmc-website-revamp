@@ -3,6 +3,8 @@ import styles from './index.module.scss';
 import Image from 'next/image';
 import Map from '@components/map';
 
+// THINKING: are "CONFIDENT" and "PRAGMATIC COMPREHENSIVE" be the same components, and use the props to control left or right
+// THINKING: are the "We do real work, not just to put up empty promises" and "Map" be the same as well
 export default function About() {
 
     const defaultProps = {
@@ -29,6 +31,8 @@ export default function About() {
                     fill
                 />
                 <h1 className={styles.heroTitle}>PROFESSIONAL HIGH-END</h1>
+                {/* TODO: component - Card, and migrate the header navbar with using the Card component */}
+                {/* FIXME: typo */}
                 <div className={styles.heroDescriptonContainer}>
                     <div className={styles.heroDescriptionText}>
                     EDMC offers project management, consulting and contracting services in a wide range of interior fitting out projects, including office premises, retail outlets, residences, hotels and art galleries.
@@ -45,7 +49,6 @@ export default function About() {
                         fill
                     />
                 </div>
-
                 <div className={styles.confidentDiv}>
                     Fitting out contracting services and projects including carpentry, metal works, plumbing and drainage, electrical works, air-conditioning works, cement works, painting, aluminum works, glass partition, signage and graphic production.
                 </div>

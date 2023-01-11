@@ -15,24 +15,31 @@ const Header: React.FC = () => {
     const router = useRouter();
     const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
 
+    const navToRoot = () => router.push('/'); // THINKING: consolidate it in a route util.
+
     return (
         <>
             <div className={styles.pcView}>
                 <div className={styles.header}>
-                    <div onClick={() => router.push('/')}>
+                    {/* FIXME: not recommend to put ther */}
+                    <div onClick={navToRoot}>
                         <Image className={styles.icon} src='/logo.png' alt='AAXPay' width={110} height={110} />
                     </div>
                     <div className={styles.space} />
                     <div className={styles.right}>
+                        {/* TODO: component - Icon */}
+                        {/* FIXME: fn issue, please ref navToRoot */}
                         <button className={styles.locationButton} onClick={() => { router.push('/about#location') }}>
                             <Image src='/locationLogo.svg' width={20} height={20} alt='location' />
                         </button>
+                        {/* TODO: component - Typography, since duplicate using the styles.pageListItem */}
                         <span className={styles.pageListItem}>
                             edmc@edmc.hk
                         </span>
                         <span className={styles.pageListItem}>
                             +852 3620 3086
                         </span>
+                        {/* TODO: combine with your Dropdown component, and handle the business requirement with css */}
                         <button
                             className={styles.menuButton}
                             onClick={() => setIsOpenDrawer(!isOpenDrawer)}
@@ -43,6 +50,7 @@ const Header: React.FC = () => {
                 </div>
             </div>
 
+            {/* UI COMMENT: Is not sexy for real, should be better in UI perspective */}
             <div className={isOpenDrawer ? styles.drawer : styles.drawerClosed}>
                 <div className={styles.linkContainer}>
                     {pageTab.map((tab) => (
