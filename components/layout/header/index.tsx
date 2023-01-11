@@ -20,12 +20,12 @@ const Header: React.FC = () => {
             <div className={styles.pcView}>
                 <div className={styles.header}>
                     <div onClick={() => router.push('/')}>
-                        <Image className={styles.icon} src="/next.svg" alt="AAXPay" width={120} height={120} />
+                        <Image className={styles.icon} src='/logo.png' alt='AAXPay' width={110} height={110} />
                     </div>
                     <div className={styles.space} />
                     <div className={styles.right}>
-                        <button>
-                            Location
+                        <button className={styles.locationButton} onClick={() => { router.push('/about#location') }}>
+                            <Image src='/locationLogo.svg' width={20} height={20} alt='location' />
                         </button>
                         <span className={styles.pageListItem}>
                             edmc@edmc.hk
@@ -33,11 +33,11 @@ const Header: React.FC = () => {
                         <span className={styles.pageListItem}>
                             +852 3620 3086
                         </span>
-                        <button 
-                            className={styles.pageListItem}
+                        <button
+                            className={styles.menuButton}
                             onClick={() => setIsOpenDrawer(!isOpenDrawer)}
                         >
-                            {isOpenDrawer ? 'close' : 'open'}
+                            {isOpenDrawer ? <Image src='/cross.svg' alt='close' width={20} height={20} /> : <Image src='/burger.svg' alt='menu' width={20} height= {20} />}
                         </button>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
             <div className={isOpenDrawer ? styles.drawer : styles.drawerClosed}>
                 <div className={styles.linkContainer}>
                     {pageTab.map((tab) => (
-                        <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItem} onClick={() => setIsOpenDrawer(false)}>
+                        <Link type="text" key={tab.name} href={tab.path} className={styles.pageListItemDrawer} onClick={() => setIsOpenDrawer(false)}>
                             {tab.name}
                         </Link>
                     ))}

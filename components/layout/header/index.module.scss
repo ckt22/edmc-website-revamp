@@ -21,8 +21,17 @@
 
 .pageListItem {
     font-size: 18px;
+    letter-spacing: 0.1rem;
     color: global.$secondary-color;
-    margin: 0 8px;
+    margin: 0 12px;
+}
+
+.pageListItemDrawer {
+    font-size: 100px;
+    font-weight: 200;
+    color: global.$secondary-color;
+    margin: 12px 0;
+    text-decoration: none;
 }
 
 .pcView {
@@ -42,9 +51,25 @@
 }
 
 .right {
-    background-color: darkblue;
+    background-color: #162336;
     height: 36px;
-    padding: 15px;
+    padding: 18px;
+    align-items: center;
+    display: flex;
+
+    .locationButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .menuButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: 10px;
+    }
 }
 
 .drawerClosed {
@@ -60,7 +85,7 @@
     width: 90%;
     height: 96vh;
     margin: 1vh auto;
-    background: orange;
+    background: #162336;
     z-index: 4;
 
     .linkContainer {
