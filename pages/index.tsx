@@ -73,7 +73,10 @@ export default function Home() {
         <div className={styles.galleryScrollContainer}>
           <div
             className={styles.galleryScrollButton}
-            onClick={() => getNewGalleryIndex(false)}
+            onClick={(event) => {
+              event.preventDefault();
+              getNewGalleryIndex(false);
+            }}
           >
             <Image className={styles.arrowLeft} src='/arrowLeft.svg' width={20} height={20} alt='arrow left' />
             Previous
@@ -81,7 +84,10 @@ export default function Home() {
           <div className={styles.space} />
           <div
             className={styles.galleryScrollButton}
-            onClick={() => getNewGalleryIndex(true)}
+            onClick={(event) => {
+              event.preventDefault();
+              getNewGalleryIndex(true);
+            }}
           >
             Next
             <Image className={styles.arrowRight} src='/arrowRight.svg' width={20} height={20} alt='arrow right' />

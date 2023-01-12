@@ -15,16 +15,19 @@ const Header: React.FC = () => {
     const router = useRouter();
     const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
 
+    const backToHome = () => router.push('/');
+    const goToLocation = () => router.push('/about#location');
+
     return (
         <>
             <div className={styles.pcView}>
                 <div className={styles.header}>
-                    <div onClick={() => router.push('/')}>
+                    <div onClick={backToHome}>
                         <Image className={styles.icon} src='/logo.png' alt='AAXPay' width={110} height={110} />
                     </div>
                     <div className={styles.space} />
                     <div className={styles.right}>
-                        <button className={styles.locationButton} onClick={() => { router.push('/about#location') }}>
+                        <button className={styles.locationButton} onClick={goToLocation}>
                             <Image src='/locationLogo.svg' width={20} height={20} alt='location' />
                         </button>
                         <span className={styles.pageListItem}>
