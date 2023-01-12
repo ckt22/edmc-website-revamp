@@ -1,0 +1,71 @@
+@use 'styles/global.scss';
+
+.projectsCardContainer {
+    background-color: white;
+    padding: 30px;
+    position: relative;
+    height: 15vh;
+    margin: 0 40px;
+
+    > h1 {
+        margin: 0;
+        position: absolute;
+        top: -15%;
+        font-weight: 500;
+        color: global.$primary-color;
+    }
+
+    .projectsCardButtonContainer {
+        position: absolute;
+        bottom: -5%;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+
+        .space {
+            flex: 1;
+        }
+
+        .cardButton {
+            min-width: 10vw;
+            background-color: lightgray;
+            font-size: 16px;
+            color: global.$primary-color;
+            padding: 15px;
+            margin: 0 2%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clickAble {
+            cursor: pointer;
+        }
+    }
+
+}
+
+@media (max-width: global.$mobile) {
+    .projectsCardContainer {
+
+        padding: 40px;
+        margin-right: 10px;
+        font-size: 14px;
+        height: auto;
+
+        > h1 {
+            top: 0;
+            font-size: 22px;
+        }
+
+        .projectsCardButtonContainer {
+            font-size: 14px;
+            .cardButton {
+                font-size: 10px;
+                padding: 8px;
+            }
+        }
+    }
+}

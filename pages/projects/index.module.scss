@@ -12,7 +12,7 @@
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    background-color: lightgray;
+    background-color: #F2F2F2;
 
     z-index: -1;
 }
@@ -22,12 +22,94 @@
     position: relative;
     margin: 20vh 5% 0 5%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     .space {
         flex: 1;
     }
+    
+    .buttonWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 16vw;
+        margin: 0 1%;
+        position: relative;
+
+        .button {
+            width: 100%;
+            font-family: 'Oswald';
+            font-size: 16px;
+            border: 0;
+            background: global.$primary-color;
+            min-height: 7vh;
+            padding: 6px 20px;
+            position: relative;
+            text-align: left;
+            color: white;
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
 }
 
 .galleryContainer {
     position: relative;
+    min-height: 70vh;
+    margin: 3vh 0 10vh 0;
+
+    .imageContainer {
+        position: absolute;
+        object-fit: cover;
+        width: 52%;
+        top: 8%;
+
+        z-index: 2;
+
+        .theImage {
+            object-fit: cover;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
+        }
+    }
+
+    .projectsCardContainer {
+        position: absolute;
+        top: 35%;
+        width: 60%;
+    }
+
+    .top {
+        z-index: 4;
+    }
+
+    .absLeft {
+        position: absolute;
+        left: 0;
+    }
+
+    .absRight {
+        position: absolute;
+        right: 0;
+    }
+}
+
+@media (max-width: global.$mobile) {
+    .galleryContainer {
+        min-height: 40vh;
+
+        .imageContainer {
+            width: 80%;
+        }
+
+        .projectsCardContainer {
+            width: 100%;
+            top: 80%;
+        }
+    }
 }

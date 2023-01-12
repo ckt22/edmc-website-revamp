@@ -3,6 +3,7 @@ $tablet: 990px;
 $mobile: 568px;
 $primary-color: #263243; // primary color for all components
 $secondary-color: #9a9a9a;
+$background-color: #F2F2F2;
 $link-color: #007dff; // link color
 $error-color: #ed7282; // error state color
 
@@ -17,13 +18,15 @@ $error-color: #ed7282; // error state color
 // only display on desktop or above
 @mixin pcView {
   display: block;
-  @media (max-width: $tablet) {
-    display: none;
-  }
+
+  // @media (max-width: $tablet) {
+  //   display: none;
+  // }
 }
 // only display on tablet or below
 @mixin tabletView {
   display: none;
+  
   @media (max-width: $tablet) {
     display: block;
   }

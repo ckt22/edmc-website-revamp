@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './index.module.scss';
 
 
-export default function DropDown({ name, optionsList } : { name?: string, optionsList : Array<{ name: string, value: string | number, isHidden?: boolean }> }) {
+export default function DropDown({ name, optionsList = [] } : { name?: string, optionsList? : Array<{ name: string, value: string | number, isHidden?: boolean }> }) {
 
     const [isOptionsOpen, setIsOptionsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(0);
@@ -31,9 +31,12 @@ export default function DropDown({ name, optionsList } : { name?: string, option
                 {optionsList[selectedOption].name}
                 <div className={styles.space} />
                 {
-                    isOptionsOpen
-                    ? <Image src='/arrowLeft.svg' alt='arrow' width={20} height={20} />
-                    : <Image src='/arrowRight.svg' alt='arrow' width={20} height={20} />
+                    isOptionsOpen && optionsList.length > 1 &&
+                        <Image src='/arrowLeft.svg' alt='arrow' width={20} height={20} />
+                }
+                {
+                    !isOptionsOpen && optionsList.length > 1 &&
+                    <Image src='/arrowRight.svg' alt='arrow' width={20} height={20} />
                 }
             </button>
             <ul
@@ -42,7 +45,7 @@ export default function DropDown({ name, optionsList } : { name?: string, option
                 // aria-activedescendant={optionsList[selectedOption].name}
                 tabIndex={-1}
             >
-                {optionsList.map((option, index) => {
+                {optionsList.length > 1 && optionsList.map((option, index) => {
                     if (!option.isHidden) {
                         return (
                         <li
