@@ -20,7 +20,7 @@ export default function DropDown({ name, optionsList = [] } : { name?: string, o
     };
 
     return (
-        <div className={styles.dropdownContainer}>
+        <div className={`${styles.dropdownContainer} ${ optionsList.length <= 1 && `${styles.button}`}`}>
             <button
                 type="button"
                 aria-haspopup="listbox"
@@ -29,14 +29,19 @@ export default function DropDown({ name, optionsList = [] } : { name?: string, o
                 onClick={toggleOptions}
             >
                 {optionsList[selectedOption].name}
-                <div className={styles.space} />
                 {
                     isOptionsOpen && optionsList.length > 1 &&
-                        <Image src='/arrowLeft.svg' alt='arrow' width={20} height={20} />
+                        (<>
+                            <div className={styles.space} />
+                            <Image src='/arrowLeft.svg' alt='arrow' width={20} height={20} />
+                        </>)
                 }
                 {
-                    !isOptionsOpen && optionsList.length > 1 &&
-                    <Image src='/arrowRight.svg' alt='arrow' width={20} height={20} />
+                    !isOptionsOpen && optionsList.length > 1 && 
+                    (<>
+                        <div className={styles.space} />
+                        <Image src='/arrowRight.svg' alt='arrow' width={20} height={20} />
+                    </>)
                 }
             </button>
             <ul

@@ -1,0 +1,73 @@
+@use 'styles/global.scss';
+
+.sectionContainer {
+    display: block;
+    position: relative;
+    margin: 18vh 5% 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1% 20%;
+    align-self: center;
+
+    .tagsWhite {
+        background-color: white;
+        padding: 1.5% 4%;
+        font-size: 16px;
+    }
+}
+
+.captionContainer {
+    margin: 2% 25%;
+    text-align: center;
+    color: #4F6584;
+    word-spacing: 0.5px;
+}
+
+.prjDetailImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1% 15%;
+
+    .image {
+        object-fit: cover;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+    }
+}
+
+.galleryContainer {
+    .projectsCardContainer {
+        top: 18%;
+        .card {
+            position: relative;
+            background-color: white;
+            width: 55%;
+            height: 25vh;
+            padding: 8% 13% 2%;
+            left: 10%;
+            letter-spacing: 0.5px;
+            color: #4F6584;
+        }
+    }
+}
+
+.footerButtonContainer {
+
+    margin-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}

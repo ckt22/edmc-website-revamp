@@ -57,48 +57,6 @@
 
 }
 
-.galleryContainer {
-    position: relative;
-    min-height: 70vh;
-    margin: 3vh 0 10vh 0;
-
-    .imageContainer {
-        position: absolute;
-        object-fit: cover;
-        width: 52%;
-        top: 8%;
-
-        z-index: 2;
-
-        .theImage {
-            object-fit: cover;
-            width: 100% !important;
-            position: relative !important;
-            height: unset !important;
-        }
-    }
-
-    .projectsCardContainer {
-        position: absolute;
-        top: 35%;
-        width: 60%;
-    }
-
-    .top {
-        z-index: 4;
-    }
-
-    .absLeft {
-        position: absolute;
-        left: 0;
-    }
-
-    .absRight {
-        position: absolute;
-        right: 0;
-    }
-}
-
 @media (max-width: global.$mobile) {
     .galleryContainer {
         min-height: 40vh;

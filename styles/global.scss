@@ -31,3 +31,94 @@ $error-color: #ed7282; // error state color
     display: block;
   }
 }
+
+.pageContainer {
+  font-family: 'Oswald';
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  position: absolute;
+
+  // hack - to apply background throughout the page
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  background-color: #F2F2F2;
+
+  z-index: -1;
+}
+
+.pageHeader {
+  font-weight: 200;
+}
+
+.sectionContainer {
+  position: relative;
+}
+
+.galleryContainer {
+  position: relative;
+  min-height: 70vh;
+  margin: 3vh 0 10vh 0;
+
+  .imageContainer {
+      position: absolute;
+      object-fit: cover;
+      width: 52%;
+      top: 8%;
+
+      z-index: 2;
+
+      .theImage {
+          object-fit: cover;
+          width: 100% !important;
+          position: relative !important;
+          height: unset !important;
+      }
+  }
+
+  .projectsCardContainer {
+      position: absolute;
+      top: 35%;
+      width: 60%;
+  }
+
+  .top {
+      z-index: 4;
+  }
+
+  .absLeft {
+      position: absolute;
+      left: 0;
+  }
+
+  .absRight {
+      position: absolute;
+      right: 0;
+  }
+}
+
+.buttonWhite {
+  background-color: white;
+  padding: 15px;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 25px 0;
+  cursor: pointer;
+}
+
+.buttonSecondary {
+  color: $primary-color;
+  padding: 10px;
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 25px 0;
+  cursor: pointer;
+}
