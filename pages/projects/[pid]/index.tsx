@@ -48,7 +48,13 @@ export default function AesopGoghStreetProject({ projectData }: { projectData: P
                 {tags.map((t, idx) => (<div key={idx} className={styles.tagsWhite}>{t}</div>))}
             </div>
             <div className={styles.carouselContainer}>
-
+                <Image className={styles.carouselImage} src='/aesop.jpeg' alt='aesop' fill />
+                <div className={`${styles.absLeft} ${styles.carouselButtons}`}>
+                    <Image src='/arrowLeft.svg' alt='arrow left' width={30} height={30} />
+                </div>
+                <div className={`${styles.absRight} ${styles.carouselButtons}`}>
+                <Image src='/arrowRight.svg' alt='arrow right' width={30} height={30} />
+                </div>
             </div>
             <div className={styles.captionContainer}>
                 {projectData.description}

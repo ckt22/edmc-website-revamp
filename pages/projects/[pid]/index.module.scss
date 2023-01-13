@@ -14,14 +14,58 @@
     justify-content: space-between;
     align-items: center;
 
-    margin: 1% 20%;
+    margin: 1% 20% 3%;
     align-self: center;
 
     .tagsWhite {
+        text-align: center;
         background-color: white;
+        margin: 0 5px;
         padding: 1.5% 4%;
         font-size: 16px;
     }
+}
+
+.carouselContainer {
+    position: relative;
+    min-height: 70vh;
+    object-fit: cover;
+    width: 100%;
+    top: 8%;
+    margin-bottom: 40px;
+
+    z-index: 2;
+
+    .carouselImage {
+        object-fit: cover;
+        width: 100% !important;
+        position: relative !important;
+        height: unset !important;
+    }
+
+    .carouselButtons {
+        position: absolute;
+        top: 0;
+        margin-top: 25%;
+        background-color: global.$primary-color;
+        padding: 2%;
+        color: white;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .absLeft {
+        left: 0;
+    }
+
+    .absRight {
+        right: 0;
+    }
+
+
 }
 
 .captionContainer {
@@ -70,4 +114,43 @@
     align-items: center;
 
     
+}
+
+@media (max-width: global.$tablet) {
+    .carouselContainer {
+        min-height: 380px;
+    }
+
+    .captionContainer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: global.$mobile) {
+
+    .tagsContainer {
+        .tagsWhite {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            min-height: 40px;
+            font-size: 11px;
+        }
+    }
+
+    .carouselContainer {
+        min-height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .galleryContainer {
+        min-height: 40vh;
+        margin: 3vh 0 3vh 0;
+        .projectsCardContainer {
+            .card {
+                font-size: 12px;
+            }
+        }
+    }
 }
