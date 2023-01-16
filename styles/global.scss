@@ -122,3 +122,13 @@ $error-color: #ed7282; // error state color
   margin: 10px 0 25px 0;
   cursor: pointer;
 }
+
+.footerButtonContainer {
+
+  margin-bottom: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}

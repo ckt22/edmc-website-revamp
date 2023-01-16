@@ -1,0 +1,126 @@
+@use 'styles/global.scss';
+
+.sectionContainer {
+    color: global.$primary-color;
+    display: block;
+    position: relative;
+    margin: 18vh 5% 0 5%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.galleryContainer {
+    height: 60vh;
+    margin: 12vh 0;
+    position: relative;
+    .projectsCardContainer {
+        top: 0;
+        margin-top: 6%;
+        height: 70vh;
+        .card {
+            position: relative;
+            background-color: white;
+            width: 55%;
+            min-height: 6vh;
+            padding: 8% 13% 10% 5%;
+            left: 10%;
+            letter-spacing: 0.5px;
+            color: #4F6584;
+            font-size: 14px;
+        }
+        .cardTitle {
+            color: global.$primary-color;
+            z-index: 5;
+            position: absolute;
+            margin-top: -3%;
+            margin-left: 15%;
+        }
+
+        .wide_50 {
+            width: 50%;
+            padding: 5%;
+        }
+
+        .wide_60 {
+            width: 60%;
+            height: 10vh;
+        }
+
+        .wide_70 {
+            width: 70%;
+        }
+    }
+
+    .absTop {
+        margin-top: -2%;
+    }
+
+    .center {
+        margin-left: 25%;
+    }
+
+    .imageContainer {
+        width: 51%;
+    }
+
+    .image_45 {
+        width: 50%;
+    }
+
+    .wideImage {
+        width: 65%;
+    }
+}
+
+@media (max-width: global.$mobile) {
+    .galleryContainer {
+        min-height: 25vh;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        .imageContainer {
+            width: 65%;
+        }
+
+        .projectsCardContainer {
+            width: 95%;
+            margin-top: 55%;
+            height: 5vh;
+            .card {
+                // margin-top: 50%;
+                font-size: 9px;
+                padding: 8% 10% 3% 5%;
+            }
+            .cardTitle {
+                font-size: 16px;
+                margin-left: 12.5%;
+                margin-top: -3%;
+            }
+            .wide_50 {
+                padding: 3%;
+                width: 45%;
+                min-height: 6vh;
+            }
+            .wide_60 {
+                padding: 3%;
+                width: 65%;
+                min-height: 6vh;
+            }
+            .wide_70 {
+                padding: 3%;
+                width: 70%;
+                min-height: 7vh;
+            }
+        }
+
+        .center {
+            margin-top: 0;
+            margin-left: 20%;
+        }
+    }
+
+    .absTop {
+        margin-top: -2%;
+    }
+}

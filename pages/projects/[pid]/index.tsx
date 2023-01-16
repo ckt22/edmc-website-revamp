@@ -1,8 +1,6 @@
-
 import styles from './index.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { NextPageContext } from 'next';
 import { GetStaticProps, GetStaticPropsContext, GetStaticPaths } from 'next';
 
 const tags = ['Cultural Space', 'Central', '500 - 1000 sq ft'];
@@ -22,7 +20,7 @@ type ProjectId = {
     pid: string
 }
 
-const projects: { [key: string]: ProjectData; }= {
+const projects: { [key: string]: ProjectData; } = {
     'aesop-gogh-street': {
         title: 'Aesop Gogh Street',
         projectId: 'aesop-gogh-street',
