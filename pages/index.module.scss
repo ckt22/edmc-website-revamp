@@ -67,12 +67,15 @@
     }
 
     .galleryDescriptionViewButton {
-        margin-left: -25px;
+        // margin-left: -25px;
         position: absolute;
-        right: 25%;
-        bottom: 30%;
-        height: 25%;
-        width: 12%;
+        top: 0;
+        margin-left: 60%;
+        margin-top: 8%;
+        // right: 25%;
+        // bottom: 30%;
+        height: 45px;
+        width: 105px;
         background-color: white;
         color: global.$primary-color;
 
@@ -112,6 +115,41 @@
     }
 }
 
+@media (max-width: global.$tablet) { 
+
+    .galleryCardTitle {
+        font-size: 35px;
+        bottom: 95%;
+    }
+
+    .galleryCardContainer {
+        height: 20%;
+        width: 90%;
+    }
+
+    .galleryCardDescriptionContainer {
+        width: 65%;
+        height: 45%;
+
+        padding: 5% 8% 5% 5%;
+
+        .galleryCardDescriptionText {
+            font-size: 14px;
+            line-height: 1.2rem;
+        }
+
+        .galleryDescriptionViewButton {
+            top: 0;
+            margin-top: 13%;
+            margin-left: 65%;
+        }
+    }
+
+    .galleryScrollContainer {
+        width: 80%;
+    }
+}
+
 @media (max-width: global.$mobile) { 
 
     .galleryCardTitle {
@@ -136,9 +174,9 @@
         }
 
         .galleryDescriptionViewButton {
-            width: 25%;
-            right: 5%;
-            bottom: 35%;
+            top: 0;
+            margin-top: 15%;
+            margin-left: 70%;
         }
     }
 
