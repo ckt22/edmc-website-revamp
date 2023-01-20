@@ -20,7 +20,7 @@
 .dropdownContainer {
     display: block;
     position: relative;
-    margin: 20vh 5% 0 5%;
+    margin: 20vh 5% 10vh 5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +58,10 @@
 }
 
 @media (max-width: global.$mobile) {
+    .dropdownContainer {
+        margin: 20vh 5% 15vh 5%;
+    }
+
     .galleryContainer {
         min-height: 40vh;
 

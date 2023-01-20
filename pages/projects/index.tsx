@@ -1,8 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DropDown from '@components/dropdown';
 import Image from 'next/image';
 import styles from './index.module.scss';
 import ProjectsCard from '@components/projectsCard';
+import projects from './content.json';
+
+type Projects = {
+    title: string,
+    description: string,
+    image: string,
+    tags: Array<{name: string, value: string}>,
+    viewPageLink: string
+}
 
 const propertySelectOptions = [
     {
@@ -18,7 +27,16 @@ const propertySelectOptions = [
 function Projects() {
 
     const [galleryImageIndex, setGalleryImageIndex] = useState<number>(0);
-    const [property, setProperty] = useState<string>('');
+    const [filters, setFilters] = useState<string>('');
+    const [filteredProjects, setFilteredProjects] = useState<Array<Projects>>();
+
+    useEffect(() => {
+        setFilteredProjects(projects);
+    }, []);
+
+    useEffect(() => {
+        setFilteredProjects(filteredProjects?.filter((prj) => prj.tags.some((tag => tag.value === filters))));
+    }, [filters, filteredProjects]);
 
     return (
         <div className={styles.projectPageContainer}>
@@ -29,22 +47,17 @@ function Projects() {
                 <DropDown name={'Location'} optionsList={propertySelectOptions} />
                 <DropDown name={'Size'} optionsList={propertySelectOptions} />
             </div>
-            <div className={styles.galleryContainer}>
-                <div className={`${styles.imageContainer} ${styles.absLeft}`}>
-                    <Image className={styles.theImage} src='/gogh.png' alt='aesop' width={200} height={200} />
-                </div>
-                <div className={`${styles.projectsCardContainer} ${styles.absRight} ${styles.top}`}>
-                    <ProjectsCard title='Lo Ip Gallery' description='Some Description' tags={['Sheung Wan', 'Wah Chai']} viewPageLink='/projects/aesop-gogh-street' />
-                </div>
-            </div>
-            <div className={styles.galleryContainer}>
-                <div className={`${styles.projectsCardContainer} ${styles.absLeft} ${styles.top}`}>
-                    <ProjectsCard title='Lo Ip Gallery' description='Some Description' tags={['Sheung Wan', 'Wah Chai']} viewPageLink='/projects/aesop-gogh-street' />
-                </div>
-                <div className={`${styles.imageContainer} ${styles.absRight}`}>
-                    <Image className={styles.theImage} src='/gogh.png' alt='aesop' width={200} height={200} />
-                </div>
-            </div>
+            {(projects || []).map((item, idx) => 
+                (<div key={idx} className={styles.galleryContainer}>
+                    <div className={`${styles.imageContainer} ${idx % 2 == 0 ? `${styles.absLeft}` : `${styles.absRight}`}`}>
+                        <Image className={styles.theImage} src={item.image} alt='aesop' width={200} height={200} />
+                    </div>
+                    <div className={`${styles.projectsCardContainer} ${styles.top} ${ idx % 2 == 0 ? `${styles.absRight}` : `${styles.absLeft}`}`}>
+                        <ProjectsCard title={item.title} description={item.description} tags={item.tags} viewPageLink={item.viewPageLink} />
+                    </div>
+                </div>)
+                )
+            }
         </div>
     );
 }
