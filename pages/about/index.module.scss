@@ -101,7 +101,6 @@ $paragraph-text-color: #4F6584;
 .realWorkContainer {
     
     position: relative;
-    height: 85vh;
     margin-bottom: 5vh;
     text-align: center;
     align-items: center;
@@ -241,7 +240,7 @@ $paragraph-text-color: #4F6584;
     }
 
     .realWorkContainer {
-        height: 30vh;
+        min-height: 20vh;
 
         .realWorkHeader {
             font-size: 25px;
