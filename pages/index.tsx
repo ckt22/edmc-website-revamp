@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styles from './index.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -40,6 +40,14 @@ export default function Home() {
       }
     }
   }
+
+  useEffect(() => {
+    const timeoutID = window.setTimeout(() => {
+      getNewGalleryIndex(true);
+    }, 5000);
+
+    return () => window.clearTimeout(timeoutID);
+  });
 
   return (
     <div className={styles.homeContainer}>
