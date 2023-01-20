@@ -5,6 +5,9 @@ const nextConfig = {
   publicRuntimeConfig: {
     ...process.env,
   },
+  images: {
+    unoptimized: true // disable image optimization for static html files.
+  }
 }
 
 module.exports = nextConfig
