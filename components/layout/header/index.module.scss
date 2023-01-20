@@ -3,7 +3,6 @@
 .header {
     display: flex;
     flex-flow: row wrap;
-    // align-items: center;
     justify-content: flex-start;
     width: 90%;
     margin: 0 auto;
@@ -17,6 +16,8 @@
     display: block;
     position: absolute;
     cursor: pointer;
+    width: 110px;
+    height: 110px;
 }
 
 .pageListItem {
@@ -88,6 +89,8 @@
     background: #162336;
     z-index: 4;
 
+    animation: dropIn 0.5s ease 0s 1 normal forwards;
+
     .linkContainer {
         margin-top: 8rem;
         display: flex;
@@ -96,15 +99,40 @@
     }
 }
 
-@media (max-width: global.$tablet) {
-    .header {
-        width: 95%;
-    }
+@keyframes dropIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
+
+// @media (max-width: global.$tablet) {
+//     .header {
+//         width: 95%;
+//     }
+// }
 
 @media (max-width: global.$mobile) {
     .header {
         width: 95%;
+    }
+
+    .icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .locationButton {
+        display: none;
+    }
+
+    .pageListItem {
+        font-size: 12px;
     }
 
     .pageListItemDrawer {

@@ -22,8 +22,8 @@ const Header: React.FC = () => {
         <>
             <div className={styles.pcView}>
                 <div className={styles.header}>
-                    <div onClick={backToHome}>
-                        <Image className={styles.icon} src='/logo.png' alt='AAXPay' width={110} height={110} />
+                    <div className={styles.icon} onClick={backToHome}>
+                        <Image className={styles.icon} src='/logo.png' alt='AAXPay' fill />
                     </div>
                     <div className={styles.space} />
                     <div className={styles.right}>
