@@ -50,7 +50,7 @@ $paragraph-text-color: #4F6584;
 .confidentContainer {
     position: relative; // required so it does not overlap with hero section
     margin-top: 5vh;
-    height: 55vh;
+    min-height: 450px;
     margin-bottom: 10vh;
 
     .confidentHeader {
@@ -126,7 +126,7 @@ $paragraph-text-color: #4F6584;
 .pragmaticContainer {
 
     position: relative;
-    height: 55vh;
+    min-height: 430px;
     margin-top: 15vh;
     margin-bottom: -15vh;
 
@@ -176,8 +176,8 @@ $paragraph-text-color: #4F6584;
 }
 
 .locationContainer {
-    height: 90vh;
-    margin-top: 30vh;
+    min-height: 620px;
+    margin: 180px 0 100px 0;
     text-align: center;
     align-items: center;
     display: flex;
@@ -216,12 +216,12 @@ $paragraph-text-color: #4F6584;
     }
 
     .confidentContainer {
-        height: 30vh;
+        min-height: 300px;
         margin-bottom: 0;
 
         .confidentHeader {
             font-size: 25px;
-            top: -10%;
+            top: -5%;
         }
 
         .confidentDiv {
@@ -248,12 +248,12 @@ $paragraph-text-color: #4F6584;
     }
 
     .pragmaticContainer {
-        height: 30vh;
+        min-height: 300px;
 
         .pragmaticHeader {
             font-size: 25px;
             left: 18%;
-            top: -18%;
+            top: -14%;
         }
 
         .pragmaticDiv {

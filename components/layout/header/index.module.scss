@@ -136,8 +136,13 @@
     }
 
     .pageListItemDrawer {
-        font-size: 70px;
-        margin: 55px 0;
+        font-size: 60px;
+        margin: 15px 0;
         text-decoration: none;
+    }
+
+    .drawer {
+        left: 2vw;
+        width: 96vw;
     }
 }
