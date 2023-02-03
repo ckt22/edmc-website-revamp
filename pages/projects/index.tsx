@@ -15,39 +15,52 @@ type Projects = {
 
 const propertySelectOptions = [
     {
-        name: 'Cultural Space Institutional',
+        name: 'Art & Cultural Spaces',
         value: 'cultural'
     },
     {
-        name: 'Residentail',
+        name: 'Art Installation',
+        value: 'art-installation'
+    },
+    {
+        name: 'Commercial Spaces',
+        value: 'commercial'
+    },
+    {
+        name: 'Government Public Sector Spaces',
+        value: 'public'
+    },
+    {
+        name: 'Residential Spaces',
         value: 'residential'
-    }
+    },
 ];
 
 function Projects() {
 
     const [galleryImageIndex, setGalleryImageIndex] = useState<number>(0);
-    const [filters, setFilters] = useState<string>('');
-    const [filteredProjects, setFilteredProjects] = useState<Array<Projects>>();
+    const [filter, setFilter] = useState<{ name: string, value: string }>();
+    const [filteredProjects, setFilteredProjects] = useState<Array<Projects>>(projects);
 
     useEffect(() => {
-        setFilteredProjects(projects);
-    }, []);
-
-    useEffect(() => {
-        setFilteredProjects(filteredProjects?.filter((prj) => prj.tags.some((tag => tag.value === filters))));
-    }, [filters, filteredProjects]);
+        if (filter) {
+            console.log(filter);
+            setFilteredProjects(projects?.filter((prj) => prj.tags.some((tag => tag.value === filter.value))));
+        }
+    }, [filter]);
 
     return (
         <div className={styles.projectPageContainer}>
             <div className={styles.dropdownContainer}>
                 <div className={styles.space} />
-                <DropDown name={'All Projects'} />
-                <DropDown name={'Property'} optionsList={propertySelectOptions} />
-                <DropDown name={'Location'} optionsList={propertySelectOptions} />
-                <DropDown name={'Size'} optionsList={propertySelectOptions} />
+                <DropDown 
+                    name={'All Projects'} 
+                    optionsList={propertySelectOptions}
+                    onChange={setFilter}
+                    value={filter}
+                />
             </div>
-            {(projects || []).map((item, idx) => 
+            {(filteredProjects || []).map((item, idx) => 
                 (<div key={idx} className={styles.galleryContainer}>
                     <div className={`${styles.imageContainer} ${idx % 2 == 0 ? `${styles.absLeft}` : `${styles.absRight}`}`}>
                         <Image className={styles.theImage} src={item.image} alt='aesop' width={200} height={200} />

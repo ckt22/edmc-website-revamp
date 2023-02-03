@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import Image from 'next/image';
 import styles from './index.module.scss';
 
 
-export default function DropDown({ name, optionsList = [] } : { name?: string, optionsList? : Array<{ name: string, value: string | number, isHidden?: boolean }> }) {
+export default function DropDown({ name, optionsList = [], value, onChange } : { name?: string, optionsList? : Array<{ name: string, value: string | number, isHidden?: boolean }>, value: any, onChange: SetStateAction<any> }) {
 
     const [isOptionsOpen, setIsOptionsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(0);
@@ -17,6 +17,7 @@ export default function DropDown({ name, optionsList = [] } : { name?: string, o
     const setSelectedThenCloseDropdown = (index: number) => {
         setSelectedOption(index);
         setIsOptionsOpen(false);
+        onChange(optionsList[index]);
     };
 
     return (

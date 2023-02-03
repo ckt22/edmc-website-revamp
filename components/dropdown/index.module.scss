@@ -1,6 +1,7 @@
 @use 'styles/global.scss';
 
 .dropdownContainer {
+    z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
