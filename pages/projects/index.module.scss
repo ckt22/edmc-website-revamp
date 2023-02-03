@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
 
-    position: absolute;
+    // position: absolute;
 
     // hack - to apply background throughout the page
     min-height: 100%;
@@ -20,7 +20,7 @@
 .dropdownContainer {
     display: block;
     position: relative;
-    margin: 20vh 5% 10vh 5%;
+    margin: 0 5% 10vh 5%;
     display: flex;
     justify-content: center;
     align-items: center;
