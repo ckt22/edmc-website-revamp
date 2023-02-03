@@ -38,7 +38,7 @@ $error-color: #ed7282; // error state color
   left: 0;
   width: 100%;
 
-  position: absolute;
+  // position: absolute;
 
   // hack - to apply background throughout the page
   min-height: 100%;
@@ -125,7 +125,7 @@ $error-color: #ed7282; // error state color
 
 .footerButtonContainer {
 
-  margin-bottom: 10vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
