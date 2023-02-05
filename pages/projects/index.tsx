@@ -60,6 +60,7 @@ function Projects() {
                     value={filter}
                 />
             </div>
+            <div className={styles.galleryContainer}>
             {(filteredProjects || []).map((item, idx) => 
                 (<div key={idx} className={styles.galleryContainer}>
                     <div className={`${styles.imageContainer} ${idx % 2 == 0 ? `${styles.absLeft}` : `${styles.absRight}`}`}>
@@ -71,6 +72,7 @@ function Projects() {
                 </div>)
                 )
             }
+            </div>
         </div>
     );
 }

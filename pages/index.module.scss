@@ -90,7 +90,8 @@
         cursor: pointer;
 
         &:hover {
-            box-shadow: inset 105px 0 0 0 global.$background-color;
+            box-shadow: inset 105px 0 0 0 #656565;
+            color: white;
         }
     }
 }

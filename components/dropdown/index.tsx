@@ -34,14 +34,14 @@ export default function DropDown({ name, optionsList = [], value, onChange } : {
                     isOptionsOpen && optionsList.length > 1 &&
                         (<>
                             <div className={styles.space} />
-                            <Image src='/arrowLeft.svg' alt='arrow' width={20} height={20} />
+                            <Image src='/arrowUp.svg' alt='arrow' width={20} height={20} />
                         </>)
                 }
                 {
                     !isOptionsOpen && optionsList.length > 1 && 
                     (<>
                         <div className={styles.space} />
-                        <Image src='/arrowRight.svg' alt='arrow' width={20} height={20} />
+                        <Image src='/arrowDown.svg' alt='arrow' width={20} height={20} />
                     </>)
                 }
             </button>
