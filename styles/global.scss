@@ -37,6 +37,7 @@ $error-color: #ed7282; // error state color
   top: 0;
   left: 0;
   width: 100%;
+  overflow: hidden; // fix the unusual overflow on mobile device
 
   // position: absolute;
 
