@@ -58,6 +58,12 @@ $error-color: #ed7282; // error state color
   position: relative;
 }
 
+.contentCenter {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
 .galleryContainer {
   position: relative;
   min-height: 65vh;

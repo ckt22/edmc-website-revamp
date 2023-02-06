@@ -44,7 +44,6 @@ function Projects() {
 
     useEffect(() => {
         if (filter) {
-            console.log(filter);
             setFilteredProjects(projects?.filter((prj) => prj.tags.some((tag => tag.value === filter.value))));
         }
     }, [filter]);
@@ -61,7 +60,8 @@ function Projects() {
                 />
             </div>
             <div className={styles.galleryContainer}>
-            {(filteredProjects || []).map((item, idx) => 
+            {filteredProjects.length ?
+                (filteredProjects).map((item, idx) => 
                 (<div key={idx} className={styles.galleryContainer}>
                     <div className={`${styles.imageContainer} ${idx % 2 == 0 ? `${styles.absLeft}` : `${styles.absRight}`}`}>
                         <Image className={styles.theImage} src={item.image} alt='aesop' width={200} height={200} />
@@ -71,6 +71,10 @@ function Projects() {
                     </div>
                 </div>)
                 )
+            :
+                <div className={`${styles.galleryContainer} ${styles.contentCenter}`}>
+                    <h1>No results for the selected category.</h1>
+                </div>
             }
             </div>
         </div>
