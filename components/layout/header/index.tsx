@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 const pageTab = [
     { name: 'About Us', path: '/about' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Case Studies', path: '/case-studies' }
+    // { name: 'Case Studies', path: '/case-studies' }
 ];
 
 const Header: React.FC = () => {
@@ -53,6 +53,10 @@ const Header: React.FC = () => {
                             {tab.name}
                         </Link>
                     ))}
+                    <div className={styles.pageListItemDrawer}>
+                        Case Studies
+                        <span> / Under Construction</span>
+                    </div>
                 </div>
             </div>
 

@@ -27,12 +27,15 @@
 }
 
 .carouselContainer {
-    position: relative;
-    min-height: 70vh;
-    object-fit: cover;
+    // position: relative;
+    background: global.$background-color;
+    min-height: calc(100vh);
+    position: absolute;
+    object-fit: contain;
     width: 100%;
-    top: 8%;
-    margin-bottom: 40px;
+    top: 0;
+    // top: 8%;
+    // margin-bottom: 40px;
 
     z-index: 2;
 
@@ -40,13 +43,14 @@
         object-fit: cover;
         width: 100% !important;
         position: relative !important;
-        height: unset !important;
+        height: calc(90vh) !important;
+        // height: unset !important;
     }
 
     .carouselButtons {
         position: absolute;
-        top: 0;
-        margin-top: 25%;
+        top: 45%;
+        // margin-top: 25%;
         background-color: global.$primary-color;
         padding: 2%;
         color: white;
@@ -105,6 +109,22 @@
     }
 }
 
+.projectsCardContainer {
+    z-index: 3;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    width: 550px;
+}
+
+.footerButtonContainer {
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    padding: 0;
+}
+
 @media (max-width: global.$tablet) {
     .carouselContainer {
         min-height: 380px;
@@ -112,6 +132,14 @@
 
     .captionContainer {
         font-size: 14px;
+    }
+
+    .projectsCardContainer {
+        z-index: 3;
+        position: absolute;
+        top: 60%;
+        left: 15%;
+        width: calc(65vw);
     }
 }
 
@@ -141,5 +169,11 @@
                 font-size: 12px;
             }
         }
+    }
+
+    .projectsCardContainer {
+        top: 80%;
+        left: 15%;
+        width: calc(70vw);
     }
 }
