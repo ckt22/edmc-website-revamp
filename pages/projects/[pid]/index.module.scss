@@ -44,7 +44,14 @@
         width: 100% !important;
         position: relative !important;
         height: calc(90vh) !important;
+        animation-name: imageFadeAnimation;
+        animation-duration: 2.5s;
         // height: unset !important;
+    }
+
+    @keyframes imageFadeAnimation {
+        from {opacity: 0;}
+        to {opacity: 1;}
     }
 
     .carouselButtons {
@@ -52,6 +59,7 @@
         top: 45%;
         // margin-top: 25%;
         background-color: global.$primary-color;
+        cursor: pointer;
         padding: 2%;
         color: white;
         height: 30px;
@@ -139,7 +147,7 @@
         position: absolute;
         top: 60%;
         left: 15%;
-        width: calc(65vw);
+        width: 480px;
     }
 }
 

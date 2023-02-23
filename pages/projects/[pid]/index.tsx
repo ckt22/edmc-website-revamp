@@ -1,17 +1,20 @@
 import styles from './index.module.scss';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticProps, GetStaticPropsContext, GetStaticPaths } from 'next';
 import ProjectsCard from '@components/projectsCard';
-
-const tags = ['Cultural Space', 'Central', '500 - 1000 sq ft'];
+import projects from './content.json';
 
 type ProjectData = {
     title: string,
+    image: string,
+    imageAlt: string,
     projectId: string,
     description: string,
     description2?: string,
-    tags: [{ name: string, value: string }]
+    tags: { name: string, value: string }[],
+    galleryImages: { image: string, imageAlt: string }[]
 }
 
 type ProjectStaticProps = {
@@ -22,15 +25,15 @@ type ProjectId = {
     pid: string
 }
 
-const projects: { [key: string]: ProjectData; } = {
-    'aesop-gogh-street': {
-        title: 'Aesop Gogh Street',
-        projectId: 'aesop-gogh-street',
-        description: 'Aesop Gough Street sits on a bustling corner in central Hong Kong. With long-standing collaborators, it has nestled a translucent structure into the pre-existing, pockmarked concrete shell.',
-        description2: `A topography of large concrete artefacts is revealed underneath the modulating bricks. Forgotten, interstitial spaces are fossilised. A floating grid or ladder emerges from between the bricks, evoking the stacked density of Hong Kong's high-rise buildings. `,
-        tags: [{ name: 'Cultural Space', value: 'cultural' }]
-    }
-}
+// const projects: { [key: string]: ProjectData; } = {
+//     'aesop-gogh-street': {
+//         title: 'Aesop Gogh Street',
+//         projectId: 'aesop-gogh-street',
+//         description: 'Aesop Gough Street sits on a bustling corner in central Hong Kong. With long-standing collaborators, it has nestled a translucent structure into the pre-existing, pockmarked concrete shell.',
+//         description2: `A topography of large concrete artefacts is revealed underneath the modulating bricks. Forgotten, interstitial spaces are fossilised. A floating grid or ladder emerges from between the bricks, evoking the stacked density of Hong Kong's high-rise buildings. `,
+//         tags: [{ name: 'Cultural Space', value: 'cultural' }]
+//     }
+// }
 
 
 export default function AesopGoghStreetProject({ projectData }: { projectData: ProjectData }) {
@@ -39,6 +42,32 @@ export default function AesopGoghStreetProject({ projectData }: { projectData: P
 
     const goToCaseStudies = () => router.push(`/case-studies/${projectData.projectId}`);
     const backToProjects = () => router.push('/projects');
+
+    const [galleryIndex, setGalleryIndex] = useState<number>(0);
+
+    const getNewGalleryIndex = (isNext: boolean) => {
+        if (isNext) {
+          if (galleryIndex + 1 >= projectData.galleryImages.length) {
+            setGalleryIndex(0)
+          } else {
+            setGalleryIndex(galleryIndex + 1);
+          }
+        } else {
+          if (galleryIndex - 1 < 0) {
+            setGalleryIndex(projectData.galleryImages.length - 1)
+          } else {
+            setGalleryIndex(galleryIndex - 1);
+          }
+        }
+      }
+    
+      useEffect(() => {
+        const timeoutID = window.setTimeout(() => {
+          getNewGalleryIndex(true);
+        }, 5000);
+    
+        return () => window.clearTimeout(timeoutID);
+      });
 
     return (
         <div className={styles.pageContainer}>
@@ -49,12 +78,18 @@ export default function AesopGoghStreetProject({ projectData }: { projectData: P
                 {tags.map((t, idx) => (<div key={idx} className={styles.tagsWhite}>{t}</div>))}
             </div> */}
             <div className={styles.carouselContainer}>
-                <Image className={styles.carouselImage} src='/aesop.jpeg' alt='aesop' fill />
-                <div className={`${styles.absLeft} ${styles.carouselButtons}`}>
+                <Image key={galleryIndex} className={styles.carouselImage} src={`${projectData.galleryImages[galleryIndex].image}`} alt={`${projectData.galleryImages[galleryIndex].imageAlt}`} fill />
+                <div className={`${styles.absLeft} ${styles.carouselButtons}`} onClick={(event) => {
+                    event.preventDefault();
+                    getNewGalleryIndex(false);
+                }}>
                     <Image src='/arrowLeft.svg' alt='arrow left' width={30} height={30} />
                 </div>
-                <div className={`${styles.absRight} ${styles.carouselButtons}`}>
-                <Image src='/arrowRight.svg' alt='arrow right' width={30} height={30} />
+                <div className={`${styles.absRight} ${styles.carouselButtons}`} onClick={(event) => {
+                    event.preventDefault();
+                    getNewGalleryIndex(true);
+                }}>
+                    <Image src='/arrowRight.svg' alt='arrow right' width={30} height={30} />
                 </div>
             </div>
             {/* <div className={styles.captionContainer}>
@@ -118,7 +153,7 @@ export const getStaticProps: GetStaticProps<ProjectStaticProps, ProjectId> = (co
 
     const pid = context.params?.pid as string;
 
-    const prj = projects[pid];
+    const prj = projects.find(prj => prj.projectId === pid);
     
     if (!prj) {
         return {

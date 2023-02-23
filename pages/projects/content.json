@@ -7,10 +7,6 @@
             {
                 "name": "Cultural",
                 "value": "cultural"
-            }, 
-            {
-                "name": "Sheung Wan",
-                "value": "sheungWan"
             }
         ],
         "viewPageLink": "/projects/aesop-gogh-street"
@@ -23,10 +19,6 @@
             {
                 "name": "Residential",
                 "value": "residential"
-            }, 
-            {
-                "name": "Sheung Wan",
-                "value": "sheungWan"
             }
         ],
         "viewPageLink": "/projects/aesop-gogh-street"
