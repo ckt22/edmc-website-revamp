@@ -30,9 +30,15 @@
 .pageListItemDrawer {
     font-size: 80px;
     font-weight: 200;
+    letter-spacing: 2px;
     color: global.$secondary-color;
     margin: 30px 0;
     text-decoration: none;
+
+    .pageListItemSmallText {
+        color: #53637A;
+        font-size: 30px;
+    }
 }
 
 .pcView {
@@ -135,9 +141,13 @@
     }
 
     .pageListItemDrawer {
-        font-size: 60px;
-        margin: 15px 0;
+        font-size: 50px;
+        margin: 35px 0;
         text-decoration: none;
+
+        .pageListItemSmallText {
+            font-size: 10px;
+        }
     }
 
     .drawer {

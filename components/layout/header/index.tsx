@@ -55,7 +55,7 @@ const Header: React.FC = () => {
                     ))}
                     <div className={styles.pageListItemDrawer}>
                         Case Studies
-                        <span> / Under Construction</span>
+                        <span className={styles.pageListItemSmallText}> / Under Construction</span>
                     </div>
                 </div>
             </div>
